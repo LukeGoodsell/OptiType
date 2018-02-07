@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # coding=utf-8
 """
 ###################################################################
@@ -153,9 +154,9 @@ def get_types(allele_id):
     else:
         aa = allele_id.split('_')
         if len(aa) == 1:
-            return table.loc[aa[0]]['4digit']
+            return allele_id + "|" + table.loc[aa[0]]['4digit']
         else:
-            return table.loc[aa[0]]['4digit']  #+ '/' + table.loc[aa[1]]['4digit']
+            return allele_id + "|" + table.loc[aa[0]]['4digit']  #+ '/' + table.loc[aa[1]]['4digit']
 
 def get_num_threads(configured_threads):
   try:
